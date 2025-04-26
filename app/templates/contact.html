@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Video Editing Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="container">
+        <div class="logo" style="font-size: 28px; font-weight: bold;">Rishwanth</div>
+        <ul class="nav-links" style="font-size: 20px;">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('contact') }}" class="active">Get in Touch></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Contact Section -->
+<section class="content" style="padding-top: 100px;">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Have a project in mind or just want to say hello? Fill out the form below!</p>
+
+        <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Let’s Work Together Section -->
+<section class="work-together">
+    <div class="container">
+        <h2>📩 Let’s Work Together</h2>
+        <p>Got footage ready? Send it over! I’ll take care of the rest.</p>
+        <a href="{{ url_for('contact') }}" class="contact-button">Contact me on WhatsApp: 789313620</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Rishwanth | Contact: 7893136201</p>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+<style>
+    
+/* Styling for the 'Let’s Work Together' section */
+.work-together {
+    padding: 50px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #333, #111);
+    color: #fff;
+}
+
+.work-together h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #e6ddc4;
+}
+
+.work-together p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    background: #e6ddc4;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #fff;
+}
+</style>
+</body>
+</html>
