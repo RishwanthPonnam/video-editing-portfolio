@@ -17,7 +17,7 @@
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('projects') }}">Projects</a></li>
-            <li><a href="{{ url_for('contact') }}" class="active">Get in Touch></li>
+            <li><a href="{{ url_for('contact') }}" class="active">Get in Touch</a></li>
         </ul>
     </div>
 </nav>
@@ -28,12 +28,20 @@
         <h1>Contact Us</h1>
         <p>Have a project in mind or just want to say hello? Fill out the form below!</p>
 
-        <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="subject" placeholder="Subject" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+        <form action="{{ url_for('contact') }}" method="POST" class="contact-form" id="contactForm">
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
     </div>
 </section>
@@ -57,7 +65,55 @@
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 <style>
-    
+/* Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #333;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #e6ddc4;
+    box-shadow: 0 0 5px rgba(230, 221, 196, 0.5);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #444;
+}
+
 /* Styling for the 'Let’s Work Together' section */
 .work-together {
     padding: 50px 20px;
@@ -94,5 +150,25 @@
     background: #fff;
 }
 </style>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic form validation
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields');
+        return;
+    }
+    
+    // If validation passes, submit the form
+    this.submit();
+});
+</script>
 </body>
 </html>
