@@ -12,7 +12,7 @@
 <!-- Navbar -->
 <nav class="navbar">
     <div class="container">
-        <div class="logo" style="font-size: 28px; font-weight: bold;">Rishwanth</div>
+        <div class="logo" style="font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #e6ddc4;">Rishwanth</div>
         <ul class="nav-links" style="font-size: 20px;">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('about') }}">About Our Work</a></li>
@@ -200,6 +200,26 @@
 .social-link:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Add animations for Contact Section */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.work-together {
+    animation: fadeIn 1.5s ease-in-out;
 }
 </style>
 

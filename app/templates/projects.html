@@ -12,7 +12,7 @@
 <!-- Navbar -->
 <nav class="navbar">
     <div class="container">
-        <div class="logo" style="font-size: 28px; font-weight: bold;">Rishwanth</div>
++        <div class="logo" style="font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #e6ddc4;">Rishwanth</div>
         <ul class="nav-links" style="font-size: 20px;">
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('about') }}">About Our Work</a></li>
@@ -229,9 +229,24 @@
         position: relative;
     }
 
+    /* Added fade-in animation for project cards */
+.project-card {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
     .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 6px 10px rgba(255, 255, 255, 0.15);
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
     }
 
     .card-image {

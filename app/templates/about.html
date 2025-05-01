@@ -13,7 +13,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo" style="font-size: 28px; font-weight: bold;">Rishwanth</div>
+            <div class="logo" style="font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #e6ddc4;">Rishwanth</div>
             <ul class="nav-links" style="font-size: 20px;">
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}" class="active">About Our Work</a></li>
@@ -80,6 +80,34 @@
     </section>
 
     <style>
+    /* Add animations for About Me and Pricing sections */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .about {
+        animation: fadeInUp 1s ease-in-out;
+    }
+
+    .pricing {
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .offers {
+        animation: fadeInUp 2s ease-in-out;
+    }
+
+    .work-together {
+        animation: fadeInUp 2.5s ease-in-out;
+    }
+
     /* About Section Styling */
     .about {
         padding: 120px 20px 60px;

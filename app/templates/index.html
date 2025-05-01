@@ -12,7 +12,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo" style="font-size: 28px; font-weight: bold;">Rishwanth</div> <!-- Increased size -->
+            <div class="logo" style="font-size: 28px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; color: #e6ddc4;">Rishwanth</div>
             <ul class="nav-links" style="font-size: 20px;"> <!-- Increased size -->
                 <li><a href="{{ url_for('index') }}" class="active">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About Our Work</a></li>
@@ -30,8 +30,8 @@
 
             <div class="section-links">
                 <a href="{{ url_for('about') }}">About Our Work</a>
-                <a href="{{ url_for('clients') }}">Our Clients</a>
                 <a href="{{ url_for('projects') }}">Our Projects</a>
+                <a href="{{ url_for('contact') }}">Contact Us</a>
             </div>
         </div>
     </header>
